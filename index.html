@@ -14,7 +14,249 @@
 .products-note{margin-top:20px;font-size:13px;color:#7e899c}
 @media(max-width:850px){.products{grid-template-columns:1fr}.product-card.bundle{grid-column:auto}}
 @media(max-width:850px){.links,.nav>.button{display:none}.grid,.services,.steps,.split,.contact-grid{grid-template-columns:1fr}h1{letter-spacing:-2.5px}section{padding:75px 0}}
-</style></head><body><nav><div class="wrap nav"><a class="brand" href="#top"><span>Sigvora</span> Consulting</a><div class="links"><a href="#services">Services</a><a href="#products">Digital Products</a><a href="#process">Process</a><a href="#contact">Contact</a></div><a class="button" href="#contact">Start a conversation</a></div></nav><main id="top"><section class="hero"><div class="wrap grid"><div><div class="pill">Business automation & digital systems</div><h1>Make your business <em>run smarter.</em></h1><p>Sigvora Consulting helps businesses reduce repetitive work, organize critical information, and build practical digital systems that make everyday operations easier to manage.</p><div class="actions"><a class="button" href="#contact">Book a free consultation →</a><a class="button ghost" href="#services">Explore services</a></div></div><div class="visual"><div class="flow"><b>01</b> New enquiry captured</div><div class="flow"><b>02</b> Workflow runs automatically</div><div class="flow"><b>03</b> Follow-up and information tracked</div></div></div></section><section id="services"><div class="wrap"><div class="eyebrow">What we do</div><h2>Practical systems for modern businesses.</h2><p class="lead">No unnecessary complexity. We focus on two things that can make a meaningful difference to how a business operates.</p><div class="services"><article class="card"><div class="num">01 / AUTOMATION</div><h3>Business Automation Setup</h3><p>Reduce repetitive manual work by connecting everyday processes into clear, practical digital workflows.</p><ul class="list"><li>Lead and enquiry workflows</li><li>Automatic emails and notifications</li><li>Form-to-sheet processes</li><li>Appointment and follow-up workflows</li><li>Simple reporting processes</li></ul><a class="button ghost" href="#contact">Discuss your workflow →</a></article><article class="card"><div class="num">02 / SYSTEMS</div><h3>Business Tracking Systems</h3><p>Create one clear place to track the information your business needs to manage every day.</p><ul class="list"><li>Lead and customer tracking</li><li>Sales and payment tracking</li><li>Project and client management</li><li>Workflow organization</li><li>Simple business dashboards</li></ul><a class="button ghost" href="#contact">Build a better system →</a></article></div></div>
+   POLICY / INFORMATION MODAL
+   ========================= */
+
+.policy-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.policy-links button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #8e9ab0;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.policy-links button:hover {
+  color: var(--brand2);
+}
+
+/* Overlay */
+
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(3, 6, 12, .82);
+  backdrop-filter: blur(12px);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.policy-overlay.active {
+  display: flex;
+}
+
+/* Main policy window */
+
+.policy-modal {
+  width: min(900px, 100%);
+  max-height: min(850px, 92vh);
+
+  background: #0b111d;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 20px;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.55);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* Header */
+
+.policy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 22px 28px;
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(255,255,255,.025);
+}
+
+.policy-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.policy-label {
+  color: var(--brand2);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.policy-title {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -.6px;
+}
+
+/* Close button */
+
+.policy-close {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.10);
+
+  background: rgba(255,255,255,.04);
+  color: #dbe2ef;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.policy-close:hover {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Content */
+
+.policy-content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.policy-content h3 {
+  margin: 30px 0 8px;
+
+  font-size: 18px;
+  color: #f5f7fb;
+}
+
+.policy-content h3:first-child {
+  margin-top: 0;
+}
+
+.policy-content p,
+.policy-content li {
+  color: #a8b2c3;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.policy-content ul {
+  padding-left: 22px;
+}
+
+.policy-content li {
+  margin: 7px 0;
+}
+
+.policy-content strong {
+  color: #e8edf6;
+}
+
+.policy-content a {
+  color: var(--brand2);
+}
+
+.policy-notice {
+  padding: 16px 18px;
+  margin-bottom: 25px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(109,140,255,.18);
+
+  background: rgba(109,140,255,.06);
+
+  color: #b9c5da;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Bottom */
+
+.policy-footer {
+  padding: 18px 28px;
+
+  border-top: 1px solid rgba(255,255,255,.08);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  color: #737f93;
+  font-size: 12px;
+}
+
+.policy-footer button {
+  padding: 9px 14px;
+  border-radius: 9px;
+
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+
+  color: #d8dfeb;
+
+  cursor: pointer;
+}
+
+/* Mobile */
+
+@media(max-width:700px) {
+
+  .policy-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .policy-modal {
+    max-height: 94vh;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .policy-header {
+    padding: 18px 20px;
+  }
+
+  .policy-title {
+    font-size: 20px;
+  }
+
+  .policy-content {
+    padding: 22px 20px;
+  }
+
+  .policy-footer {
+    padding: 15px 20px;
+  }
+
+  .policy-links {
+    gap: 12px;
+  }
+}</style></head><body><nav><div class="wrap nav"><a class="brand" href="#top"><span>Sigvora</span> Consulting</a><div class="links"><a href="#services">Services</a><a href="#products">Digital Products</a><a href="#process">Process</a><a href="#contact">Contact</a></div><a class="button" href="#contact">Start a conversation</a></div></nav><main id="top"><section class="hero"><div class="wrap grid"><div><div class="pill">Business automation & digital systems</div><h1>Make your business <em>run smarter.</em></h1><p>Sigvora Consulting helps businesses reduce repetitive work, organize critical information, and build practical digital systems that make everyday operations easier to manage.</p><div class="actions"><a class="button" href="#contact">Book a free consultation →</a><a class="button ghost" href="#services">Explore services</a></div></div><div class="visual"><div class="flow"><b>01</b> New enquiry captured</div><div class="flow"><b>02</b> Workflow runs automatically</div><div class="flow"><b>03</b> Follow-up and information tracked</div></div></div></section><section id="services"><div class="wrap"><div class="eyebrow">What we do</div><h2>Practical systems for modern businesses.</h2><p class="lead">No unnecessary complexity. We focus on two things that can make a meaningful difference to how a business operates.</p><div class="services"><article class="card"><div class="num">01 / AUTOMATION</div><h3>Business Automation Setup</h3><p>Reduce repetitive manual work by connecting everyday processes into clear, practical digital workflows.</p><ul class="list"><li>Lead and enquiry workflows</li><li>Automatic emails and notifications</li><li>Form-to-sheet processes</li><li>Appointment and follow-up workflows</li><li>Simple reporting processes</li></ul><a class="button ghost" href="#contact">Discuss your workflow →</a></article><article class="card"><div class="num">02 / SYSTEMS</div><h3>Business Tracking Systems</h3><p>Create one clear place to track the information your business needs to manage every day.</p><ul class="list"><li>Lead and customer tracking</li><li>Sales and payment tracking</li><li>Project and client management</li><li>Workflow organization</li><li>Simple business dashboards</li></ul><a class="button ghost" href="#contact">Build a better system →</a></article></div></div>
 </section><section id="products"><div class="wrap">
 <div class="eyebrow">Digital products</div>
 <h2>Ready-to-use tools for smarter work.</h2>
@@ -27,7 +269,18 @@
 </div>
 <div class="products-note">After payment, your purchased digital product will be delivered to the email address used during Razorpay checkout.</div>
 </div>
-<section class="band" id="process"><div class="wrap"><div class="eyebrow">How we work</div><h2>From scattered processes to a clearer way of working.</h2><div class="steps"><div class="step"><b>01</b><h3>Understand</h3><p>We learn how your current workflow operates.</p></div><div class="step"><b>02</b><h3>Design</h3><p>We map out a practical solution around your needs.</p></div><div class="step"><b>03</b><h3>Implement</h3><p>We build and hand over a working system.</p></div></div></div></section><section><div class="wrap split"><div><div class="eyebrow">Why Sigvora</div><h2>Technology should make work simpler.</h2><p class="lead">We understand the business problem first, then use the right digital tools to solve it.</p></div><div><div class="reason"><strong>Built around your workflow</strong><p>Improve how you already work.</p></div><div class="reason"><strong>Focused on practical outcomes</strong><p>Less manual work and clearer information.</p></div><div class="reason"><strong>Simple enough to use</strong><p>A system only works when people can actually use it.</p></div></div></div></section><section id="contact"><div class="wrap contact-grid"><div><div class="eyebrow">Start here</div><h2>Tell us what you want to improve.</h2><p class="lead">Share a few details about your business and the process you want to organize or automate.</p></div><form class="form" id="consultationForm" onsubmit="submitForm(event)"><h3 id="formTitle">Book a free consultation</h3><label>Your name</label><input name="name" required placeholder="Your name"><label>Email address</label><input name="email" type="email" required placeholder="you@example.com"><label>Business / project</label><input name="business" placeholder="What do you do?"><label>What would you like to improve?</label><textarea name="problem" required placeholder="Describe the repetitive task, workflow or tracking problem..."></textarea><input type="hidden" name="product" id="selectedProduct"><button class="button" id="submitButton" style="width:100%;margin-top:18px" type="submit">Submit enquiry →</button><div class="note" id="message">We’ll confirm that we received your enquiry and send you the next step by email.</div></form></div></section></main><footer><div class="wrap">© 2026 Sigvora Consulting — Business systems, simplified.</div></footer><script>
+<section class="band" id="process"><div class="wrap"><div class="eyebrow">How we work</div><h2>From scattered processes to a clearer way of working.</h2><div class="steps"><div class="step"><b>01</b><h3>Understand</h3><p>We learn how your current workflow operates.</p></div><div class="step"><b>02</b><h3>Design</h3><p>We map out a practical solution around your needs.</p></div><div class="step"><b>03</b><h3>Implement</h3><p>We build and hand over a working system.</p></div></div></div></section><section><div class="wrap split"><div><div class="eyebrow">Why Sigvora</div><h2>Technology should make work simpler.</h2><p class="lead">We understand the business problem first, then use the right digital tools to solve it.</p></div><div><div class="reason"><strong>Built around your workflow</strong><p>Improve how you already work.</p></div><div class="reason"><strong>Focused on practical outcomes</strong><p>Less manual work and clearer information.</p></div><div class="reason"><strong>Simple enough to use</strong><p>A system only works when people can actually use it.</p></div></div></div></section><section id="contact"><div class="wrap contact-grid"><div><div class="eyebrow">Start here</div><h2>Tell us what you want to improve.</h2><p class="lead">Share a few details about your business and the process you want to organize or automate.</p></div><form class="form" id="consultationForm" onsubmit="submitForm(event)"><h3 id="formTitle">Book a free consultation</h3><label>Your name</label><input name="name" required placeholder="Your name"><label>Email address</label><input name="email" type="email" required placeholder="you@example.com"><label>Business / project</label><input name="business" placeholder="What do you do?"><label>What would you like to improve?</label><textarea name="problem" required placeholder="Describe the repetitive task, workflow or tracking problem..."></textarea><input type="hidden" name="product" id="selectedProduct"><button class="button" id="submitButton" style="width:100%;margin-top:18px" type="submit">Submit enquiry →</button><div class="note" id="message">We’ll confirm that we received your enquiry and send you the next step by email.</div></form></div></section></main><footer>
+  <div class="wrap">
+    <div>© 2026 Sigvora Consulting — Business systems, simplified.</div>
+
+    <div class="policy-links">
+      <button onclick="openPolicy('terms')">Terms & Conditions</button>
+      <button onclick="openPolicy('privacy')">Privacy Policy</button>
+      <button onclick="openPolicy('refunds')">Cancellation & Refunds</button>
+      <button onclick="openPolicy('contact')">Contact Us</button>
+    </div>
+  </div>
+</footer><script>
 /* PASTE YOUR RAZORPAY PAYMENT LINKS HERE */
 const RAZORPAY_STARTER_KIT_URL="https://rzp.io/rzp/CaAgy2t";
 const RAZORPAY_COMMAND_CENTER_URL="PASTE_YOUR_RAZORPAY_COMMAND_CENTER_LINK_HERE";
@@ -56,4 +309,754 @@ async function submitForm(e){
     m.textContent="Thanks! We've received your enquiry. Please check your email for the next step.";b.textContent="Enquiry sent ✓";
   }catch(x){m.textContent="Something went wrong. Please try again.";b.disabled=false;b.textContent="Submit enquiry →";}
 }
+</script><!-- =========================
+     SIGVORA POLICY MODALS
+     ========================= -->
+
+<div class="policy-overlay" id="policyOverlay">
+
+  <div class="policy-modal" role="dialog" aria-modal="true">
+
+    <div class="policy-header">
+
+      <div class="policy-header-left">
+        <div class="policy-label">Sigvora Consulting</div>
+        <h2 class="policy-title" id="policyTitle">
+          Terms & Conditions
+        </h2>
+      </div>
+
+      <button
+        class="policy-close"
+        onclick="closePolicy()"
+        aria-label="Close">
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="policy-content" id="policyContent">
+      <!-- Content inserted by JavaScript -->
+    </div>
+
+
+    <div class="policy-footer">
+
+      <span>
+        Last updated: 5 September 2026
+      </span>
+
+      <button onclick="closePolicy()">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   POLICY CONTENT
+   ========================= */
+
+const policyData = {
+
+  terms: {
+
+    title: "Terms & Conditions",
+
+    content: `
+
+      <div class="policy-notice">
+        Please read these Terms & Conditions before using this website
+        or purchasing a Sigvora digital product or service.
+      </div>
+
+      <h3>1. About Sigvora Consulting</h3>
+
+      <p>
+        Sigvora Consulting provides practical business systems,
+        automation services, consulting, digital products, templates,
+        guides and related resources.
+      </p>
+
+      <p>
+        References to “Sigvora”, “we”, “us” or “our” refer to
+        Sigvora Consulting.
+      </p>
+
+
+      <h3>2. Digital Products</h3>
+
+      <p>
+        Our digital products may include AI prompt collections,
+        guides, templates, spreadsheets, checklists, workflows
+        and other electronically delivered materials.
+      </p>
+
+      <p>
+        The contents of each product are described on the relevant
+        product or payment page.
+      </p>
+
+
+      <h3>3. Ordering & Payment</h3>
+
+      <p>
+        Prices are displayed in Indian Rupees unless otherwise stated.
+        Payments are processed through the payment provider presented
+        during checkout.
+      </p>
+
+      <p>
+        An order is considered successfully completed once payment
+        has been successfully captured.
+      </p>
+
+
+      <h3>4. Digital Delivery</h3>
+
+      <p>
+        Digital products are delivered electronically to the email
+        address provided during checkout.
+      </p>
+
+      <p>
+        Delivery is generally automated after successful payment.
+        If you do not receive your purchase within approximately
+        30 minutes, please contact us.
+      </p>
+
+
+      <h3>5. Refunds & Cancellations</h3>
+
+      <p>
+        Because digital products are electronically delivered and may
+        be accessed or copied after delivery, change-of-mind refunds
+        are generally not available after successful delivery.
+      </p>
+
+      <p>
+        We will review requests involving duplicate payments,
+        non-delivery, materially corrupted or inaccessible files,
+        or other situations where a remedy is required by applicable law.
+      </p>
+
+      <p>
+        Nothing in these Terms is intended to remove or restrict
+        mandatory consumer rights.
+      </p>
+
+
+      <h3>6. Product Nature & No Guarantee</h3>
+
+      <p>
+        Our digital products and educational materials are provided
+        for general informational and educational purposes.
+      </p>
+
+      <p>
+        AI-generated results can vary depending on the AI model,
+        prompt, context, settings and other factors.
+      </p>
+
+      <p>
+        Sigvora does not guarantee specific revenue, sales,
+        productivity, business growth, cost savings or other results.
+      </p>
+
+
+      <h3>7. No Professional Advice</h3>
+
+      <p>
+        Our products and materials are not legal, tax, accounting,
+        financial, medical, cybersecurity or other professional advice.
+      </p>
+
+      <p>
+        You should obtain appropriate professional advice where
+        your particular situation requires it.
+      </p>
+
+
+      <h3>8. Intellectual Property</h3>
+
+      <p>
+        Unless otherwise stated, materials supplied by Sigvora remain
+        our intellectual property or are used under appropriate rights.
+      </p>
+
+      <p>
+        After purchase, you receive a limited, non-exclusive,
+        non-transferable licence to use the purchased materials
+        for your own personal use or internal business use.
+      </p>
+
+      <p>
+        You may not resell, redistribute, publicly publish,
+        upload the files to a public repository, share the files
+        as a giveaway, or use them to create and sell a substantially
+        competing commercial product.
+      </p>
+
+
+      <h3>9. Third-Party Services & AI Platforms</h3>
+
+      <p>
+        Some Sigvora products may be designed for use with third-party
+        services such as ChatGPT, Claude, Gemini, Google Sheets or
+        other platforms.
+      </p>
+
+      <p>
+        These services are independently operated and may change
+        their features, pricing, availability or terms.
+        Sigvora does not control these services.
+      </p>
+
+
+      <h3>10. Customer Responsibility</h3>
+
+      <p>
+        Customers are responsible for reviewing AI-generated content
+        and templates before using them in their business.
+      </p>
+
+      <p>
+        Do not enter confidential, personal, financial or sensitive
+        information into a third-party AI service unless you have
+        reviewed that service's privacy and security practices.
+      </p>
+
+
+      <h3>11. Website & Product Changes</h3>
+
+      <p>
+        We may update, improve, replace or discontinue products,
+        features, templates or website content from time to time.
+      </p>
+
+      <p>
+        Third-party platform changes may also require customers
+        to adapt how a template or workflow is used.
+      </p>
+
+
+      <h3>12. Prohibited Use</h3>
+
+      <p>
+        You must not use our website, products or services for
+        unlawful activity, fraud, abuse, harassment, infringement
+        of third-party rights or activity intended to harm our systems.
+      </p>
+
+
+      <h3>13. Limitation of Liability</h3>
+
+      <p>
+        To the maximum extent permitted by applicable law, Sigvora
+        will not be liable for indirect, incidental, special,
+        consequential or loss-of-profit damages arising from use
+        of our website, products or services.
+      </p>
+
+      <p>
+        Where liability cannot legally be excluded, it will be
+        limited to the extent permitted by law.
+      </p>
+
+
+      <h3>14. Privacy</h3>
+
+      <p>
+        Personal information is handled according to our
+        Privacy Policy.
+      </p>
+
+
+      <h3>15. Governing Law</h3>
+
+      <p>
+        These Terms are intended to be governed by the applicable
+        laws of India, subject to mandatory rights and rules
+        applicable to the customer.
+      </p>
+
+
+      <h3>16. Acceptance</h3>
+
+      <p>
+        By using this website or completing a purchase, you acknowledge
+        that you have read and agree to these Terms & Conditions,
+        together with the applicable Privacy Policy and
+        Cancellation & Refund information.
+      </p>
+
+
+      <h3>17. Contact</h3>
+
+      <p>
+        Questions regarding these Terms can be sent to:
+        <a href="mailto:purnapragya12@gmail.com">
+          purnapragya12@gmail.com
+        </a>
+      </p>
+
+    `
+  },
+
+
+  privacy: {
+
+    title: "Privacy Policy",
+
+    content: `
+
+      <div class="policy-notice">
+        We collect and use information primarily to process enquiries,
+        payments, product delivery, customer support and basic
+        business administration.
+      </div>
+
+
+      <h3>1. Information We Collect</h3>
+
+      <p>Depending on how you interact with Sigvora, we may collect:</p>
+
+      <ul>
+        <li>Your name and email address.</li>
+        <li>Business or project information you provide.</li>
+        <li>Your enquiry or support message.</li>
+        <li>Product and order information.</li>
+        <li>Payment reference information.</li>
+        <li>Information provided when booking a consultation.</li>
+        <li>Basic technical information required for website operation and security.</li>
+      </ul>
+
+
+      <h3>2. Payment Information</h3>
+
+      <p>
+        Payments are processed through the payment provider presented
+        at checkout.
+      </p>
+
+      <p>
+        We do not intentionally collect or store your full card number,
+        CVV, UPI PIN or banking credentials on our own systems.
+      </p>
+
+
+      <h3>3. How We Use Information</h3>
+
+      <p>We may use information to:</p>
+
+      <ul>
+        <li>Respond to enquiries.</li>
+        <li>Process purchases.</li>
+        <li>Deliver digital products.</li>
+        <li>Send transactional emails.</li>
+        <li>Arrange consultations.</li>
+        <li>Provide customer support.</li>
+        <li>Prevent fraud and abuse.</li>
+        <li>Maintain necessary business and legal records.</li>
+        <li>Improve our products and website.</li>
+      </ul>
+
+
+      <h3>4. Third-Party Service Providers</h3>
+
+      <p>
+        We may use third-party providers for payment processing,
+        email delivery, cloud storage, website hosting, scheduling,
+        analytics and automation.
+      </p>
+
+      <p>
+        These providers may process information as necessary
+        to provide their services.
+      </p>
+
+
+      <h3>5. Digital Product Delivery</h3>
+
+      <p>
+        When you purchase a digital product, the email address
+        provided during checkout may be used to deliver the purchased
+        product or access instructions.
+      </p>
+
+
+      <h3>6. Consultation Enquiries</h3>
+
+      <p>
+        Information submitted through our consultation form may be
+        stored in our business records and used to respond to your
+        enquiry and provide the requested next steps.
+      </p>
+
+
+      <h3>7. Cookies & Similar Technologies</h3>
+
+      <p>
+        Our website may use technologies necessary for hosting,
+        security, functionality or basic measurement.
+      </p>
+
+      <p>
+        Third-party services may use their own cookies or similar
+        technologies according to their policies.
+      </p>
+
+
+      <h3>8. Data Sharing</h3>
+
+      <p>
+        We do not sell your personal information.
+      </p>
+
+      <p>
+        Information may be shared with service providers when
+        reasonably necessary to process payments, deliver products,
+        operate the website, provide support, prevent fraud or
+        comply with legal obligations.
+      </p>
+
+
+      <h3>9. Data Retention</h3>
+
+      <p>
+        We retain information for as long as reasonably necessary
+        for business operations, accounting, security,
+        dispute resolution and legal requirements.
+      </p>
+
+
+      <h3>10. Security</h3>
+
+      <p>
+        We take reasonable measures to protect information.
+        However, no website, email system or internet transmission
+        can be guaranteed to be completely secure.
+      </p>
+
+
+      <h3>11. Privacy Requests</h3>
+
+      <p>
+        If you have a privacy question, want to request correction
+        of information, or have a privacy concern, contact us at:
+      </p>
+
+      <p>
+        <a href="mailto:purnapragya12@gmail.com">
+          purnapragya12@gmail.com
+        </a>
+      </p>
+
+
+      <h3>12. Third-Party Links</h3>
+
+      <p>
+        Our website may link to third-party services such as payment,
+        scheduling or AI platforms.
+      </p>
+
+      <p>
+        We are not responsible for the privacy practices of
+        third-party services.
+      </p>
+
+
+      <h3>13. Changes to This Policy</h3>
+
+      <p>
+        We may update this Privacy Policy when our practices,
+        services or legal requirements change.
+      </p>
+
+    `
+  },
+
+
+  refunds: {
+
+    title: "Cancellation & Refunds",
+
+    content: `
+
+      <div class="policy-notice">
+        Sigvora's digital products are delivered electronically.
+        Please review this information before completing a purchase.
+      </div>
+
+
+      <h3>1. Digital Product Delivery</h3>
+
+      <p>
+        Digital products are normally delivered automatically
+        after successful payment to the email address entered
+        during checkout.
+      </p>
+
+
+      <h3>2. Change-of-Mind Cancellations</h3>
+
+      <p>
+        Once a digital product has been successfully delivered,
+        cancellations or refunds due solely to change of mind
+        are generally not available.
+      </p>
+
+
+      <h3>3. Situations We Will Review</h3>
+
+      <p>
+        We will review requests involving:
+      </p>
+
+      <ul>
+        <li>Duplicate payment for the same purchase.</li>
+        <li>Successful payment but non-delivery of the product.</li>
+        <li>A materially corrupted or inaccessible file.</li>
+        <li>A payment or delivery issue caused by an error on our side.</li>
+        <li>Any refund or consumer right required under applicable law.</li>
+      </ul>
+
+
+      <h3>4. If You Did Not Receive Your Product</h3>
+
+      <p>
+        Please allow approximately 30 minutes after successful
+        payment for automated delivery.
+      </p>
+
+      <p>
+        If the product has still not arrived, contact:
+      </p>
+
+      <p>
+        <a href="mailto:purnapragya12@gmail.com">
+          purnapragya12@gmail.com
+        </a>
+      </p>
+
+
+      <h3>5. How to Request Support</h3>
+
+      <p>
+        Please include:
+      </p>
+
+      <ul>
+        <li>Email address used during checkout.</li>
+        <li>Product purchased.</li>
+        <li>Payment/order reference, if available.</li>
+        <li>A short description of the problem.</li>
+      </ul>
+
+
+      <h3>6. Refund Review</h3>
+
+      <p>
+        We may verify the payment, delivery record and relevant
+        transaction information before determining the appropriate
+        resolution.
+      </p>
+
+      <p>
+        Where a refund is approved, it will generally be processed
+        through the available refund mechanism associated with
+        the original transaction.
+      </p>
+
+
+      <h3>7. Consulting Services</h3>
+
+      <p>
+        Consulting engagements may have separate cancellation,
+        rescheduling, payment and refund terms depending on
+        the specific engagement.
+      </p>
+
+
+      <h3>8. Legal Rights</h3>
+
+      <p>
+        Nothing on this page is intended to exclude or restrict
+        any mandatory consumer rights under applicable law.
+      </p>
+
+
+      <h3>9. Contact</h3>
+
+      <p>
+        For payment, refund or delivery questions:
+      </p>
+
+      <p>
+        <a href="mailto:purnapragya12@gmail.com">
+          purnapragya12@gmail.com
+        </a>
+      </p>
+
+    `
+  },
+
+
+  contact: {
+
+    title: "Contact Us",
+
+    content: `
+
+      <div class="policy-notice">
+        Have a question about a product, payment, delivery,
+        consulting project or your privacy? We're happy to help.
+      </div>
+
+
+      <h3>General & Business Enquiries</h3>
+
+      <p>
+        Email us at:
+      </p>
+
+      <p>
+        <a href="mailto:purnapragya12@gmail.com">
+          purnapragya12@gmail.com
+        </a>
+      </p>
+
+
+      <h3>Digital Product Support</h3>
+
+      <p>
+        If you purchased a digital product and have not received
+        it, please allow approximately 30 minutes after successful
+        payment.
+      </p>
+
+      <p>
+        If it still has not arrived, email us with your checkout
+        email address, product name and payment reference if available.
+      </p>
+
+
+      <h3>Consulting</h3>
+
+      <p>
+        To discuss a business workflow, automation requirement
+        or consulting project, you can book a consultation.
+      </p>
+
+      <p>
+        <a
+          class="button"
+          href="https://calendar.app.google/cTbPDQEGBgKpT5zf8"
+          target="_blank"
+          rel="noopener">
+          Book a consultation →
+        </a>
+      </p>
+
+
+      <h3>Support Topics</h3>
+
+      <ul>
+        <li>Digital product delivery</li>
+        <li>Payment questions</li>
+        <li>Refund or cancellation requests</li>
+        <li>Consulting enquiries</li>
+        <li>Privacy requests</li>
+        <li>General business enquiries</li>
+      </ul>
+
+
+      <h3>Response</h3>
+
+      <p>
+        We will make reasonable efforts to respond to enquiries
+        as soon as practical.
+      </p>
+
+    `
+  }
+
+};
+
+
+/* =========================
+   OPEN POLICY
+   ========================= */
+
+function openPolicy(type) {
+
+  const overlay = document.getElementById("policyOverlay");
+  const title = document.getElementById("policyTitle");
+  const content = document.getElementById("policyContent");
+
+  const policy = policyData[type];
+
+  if (!policy) return;
+
+  title.textContent = policy.title;
+  content.innerHTML = policy.content;
+
+  overlay.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+/* =========================
+   CLOSE POLICY
+   ========================= */
+
+function closePolicy() {
+
+  const overlay = document.getElementById("policyOverlay");
+
+  overlay.classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+
+/* =========================
+   CLOSE ON BACKDROP CLICK
+   ========================= */
+
+document.getElementById("policyOverlay").addEventListener(
+  "click",
+  function(e) {
+
+    if (e.target === this) {
+      closePolicy();
+    }
+
+  }
+);
+
+
+/* =========================
+   CLOSE WITH ESCAPE
+   ========================= */
+
+document.addEventListener(
+  "keydown",
+  function(e) {
+
+    if (e.key === "Escape") {
+      closePolicy();
+    }
+
+  }
+);
+
 </script></body></html>
